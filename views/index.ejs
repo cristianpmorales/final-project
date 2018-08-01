@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canvasser</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1 id="page-title">Canvasser</h1>
+
+    <div id="list">
+      <form action="/create" method="post" accept-charset="utf-8">
+        <div class="item-new">
+          <input class="input" type="text" name="content" />
+        </div>
+      </form>
+
+    <% todos.forEach( function ( todo ){ %>
+      <div class="item">
+        <a class="update-link" href="/edit/<%= todo._id %>" title="Update this todo item"><%= todo.content %></a>
+        <a class="del-btn" href="/destroy/<%= todo._id %>" title="Delete this todo item">Delete</a>
+      </div>
+    <% }); %>
+    </div>
+
+
+      <a href="/login" class="btn btn-default">Login</a>
+      <a href="/signup" class="btn btn-default">Signup</a>
+      <script src="main.js"></script>
+    <div id="layout">
+      <div id="layout-footer"></div>
+    </div>
+    <div id="footer-wrap">
+      <div id="footer">
+      <p>Footer</p>
+        <div class="footer-content">&#169;</div>
+      </div>
+    </div>
+    <script src="/javascripts/ga.js"></script>
+  </body>
+</html>
